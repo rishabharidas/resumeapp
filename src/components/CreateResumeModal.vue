@@ -7,19 +7,26 @@
       transition="dialog-bottom-transition"
     >
       <v-card>
-        <v-card-title>
-          <div class="heading-contents">
-            <span class="text-h5 pt-2">Details</span>
-            <v-btn flat icon="mdi-close" @click="dialog = false"></v-btn>
+        <v-card-title class="px-0 heading-title">
+          <div class="px-1 heading-contents">
+            <span class="text-h5 pt-2 pl-3">Details</span>
+            <v-btn
+              class="mb-1"
+              flat
+              icon="mdi-close"
+              @click="dialog = false"
+            ></v-btn>
           </div>
         </v-card-title>
-        <v-card-text>
+        <v-card-text class="pa-0">
           <v-stepper
             :items="stepItems"
+            bg-color="white"
             flat
             alt-labels
-            border
             hide-actions
+            non-linear
+            rounded
             v-model="step"
           >
             <template v-slot:item.1>
@@ -115,5 +122,8 @@ defineExpose({ openDialog });
 .heading-contents {
   display: flex;
   justify-content: space-between;
+}
+.heading-title {
+  border-bottom: 0.5px solid;
 }
 </style>
